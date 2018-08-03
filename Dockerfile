@@ -2,7 +2,7 @@ FROM golang:1.10.3-alpine as builder
 
 WORKDIR /www/go/src/etcd
 
-COPY * .
+COPY ./* .
 
 RUN CGO_ENABLED=0 GOOS=linux go build etcd
 
