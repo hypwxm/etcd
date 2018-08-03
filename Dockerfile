@@ -2,7 +2,7 @@ FROM golang:1.10.3-alpine as builder
 
 WORKDIR /go/src/etcd/
 
-COPY main.go .
+COPY /var/lib/jenkins/workspace/test/ .
 
 RUN ls && CGO_ENABLED=0 GOOS=linux go build etcd
 
