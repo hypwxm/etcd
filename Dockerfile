@@ -4,7 +4,7 @@ WORKDIR /go/src/etcd/
 
 COPY / .
 
-RUN ls && CGO_ENABLED=0 GOOS=linux go build etcd
+RUN go build etcd
 
 FROM alpine:latest as prod
 
