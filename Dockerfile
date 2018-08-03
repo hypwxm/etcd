@@ -1,10 +1,10 @@
 FROM golang:1.10.3-alpine as builder
 
-# WORKDIR /go/src/etcd/
+WORKDIR /go/src/etcd/
 
-COPY /var/lib/jenkins/workspace/test/ /go/src/etcd/
+COPY / .
 
-RUN cd /go/src/etcd/ && CGO_ENABLED=0 GOOS=linux go build etcd
+RUN ls && CGO_ENABLED=0 GOOS=linux go build etcd
 
 FROM alpine:latest as prod
 
